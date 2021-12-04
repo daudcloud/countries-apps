@@ -4,6 +4,7 @@ const Div = styled.div`
   transition: 0.1s linear;
   background: var(--clr-background-element);
   color: var(--clr-text);
+  box-shadow: 0 1rem 0 1rem var(--clr-shadow);
   .container {
     display: flex;
     justify-content: space-between;
