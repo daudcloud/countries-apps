@@ -3,6 +3,7 @@ import Image from "next/image";
 import Layout from "../components/Layout";
 import { useState, useEffect } from "react";
 import Handler from "../components/Handler";
+import Countries from "../components/Countries";
 
 export default function Home() {
   const [countries, setCountries] = useState([]);
@@ -47,19 +48,14 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <Layout title="Rest Countries Apps">
-        <Handler
-          value={query}
-          onChange={handleChange}
-          setRegion={setRegion}
-          region={region}
-        />
-
-        {selectedCountries.map((c) => (
-          <h1>{c.name}</h1>
-        ))}
-      </Layout>
-    </div>
+    <Layout title="Rest Countries Apps">
+      <Handler
+        value={query}
+        onChange={handleChange}
+        setRegion={setRegion}
+        region={region}
+      />
+      <Countries countries={selectedCountries} />
+    </Layout>
   );
 }
