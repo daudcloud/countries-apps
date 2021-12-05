@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Layout from "../components/Layout";
 import { useState, useEffect } from "react";
+import Handler from "../components/Handler";
 
 export default function Home() {
   const [countries, setCountries] = useState([]);
@@ -39,7 +40,6 @@ export default function Home() {
       setRegCountries(temp);
       setSelectedCountries(temp);
     }
-    console.log(region);
   }, [region]);
 
   const handleChange = (e) => {
@@ -49,13 +49,13 @@ export default function Home() {
   return (
     <div>
       <Layout title="Rest Countries Apps">
-        <input type="text" value={query} onChange={handleChange} />
-        <li onClick={() => setRegion("")}>all</li>
-        <li onClick={() => setRegion("asia")}>asia</li>
-        <li onClick={() => setRegion("americas")}>americas</li>
-        <li onClick={() => setRegion("africa")}>africa</li>
-        <li onClick={() => setRegion("europe")}>europe</li>
-        <li onClick={() => setRegion("oceania")}>oceania</li>
+        <Handler
+          value={query}
+          onChange={handleChange}
+          setRegion={setRegion}
+          region={region}
+        />
+
         {selectedCountries.map((c) => (
           <h1>{c.name}</h1>
         ))}

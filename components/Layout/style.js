@@ -10,6 +10,10 @@ const Div = styled.div`
   --clr-shadow: ${({ dark }) =>
     dark ? "hsla(0,0,0%,0.7)" : "hsla(0,0,70%,0.7)"};
   --max-width: 1280px;
+  --clr-list-active: ${({ dark }) =>
+    dark ? "hsl(209, 23%, 42%)" : "hsl(0, 0%, 60%)"};
+  --clr-list-hover: ${({ dark }) =>
+    dark ? "hsl(209, 23%, 32%)" : "hsl(0, 0%, 80%)"};
   min-height: 100vh;
   background: var(--clr-background);
 `;
