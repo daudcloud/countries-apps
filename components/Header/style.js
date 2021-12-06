@@ -5,6 +5,7 @@ const Div = styled.div`
   background: var(--clr-background-element);
   color: var(--clr-text);
   box-shadow: 0 1rem 0 1rem var(--clr-shadow);
+  padding: 0 1.7em;
   .container {
     display: flex;
     justify-content: space-between;
@@ -15,7 +16,7 @@ const Div = styled.div`
     max-width: var(--max-width);
   }
   .title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 800;
   }
   .toggle-dark {

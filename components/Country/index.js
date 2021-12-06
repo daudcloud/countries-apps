@@ -1,5 +1,7 @@
+import Div from "./style";
+
 const Country = ({ country }) => {
-  return <h1>{country.name}</h1>;
+  return <Div>{country.name}</Div>;
 };
 
 export default Country;

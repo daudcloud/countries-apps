@@ -41,6 +41,7 @@ export default function Home() {
       setRegCountries(temp);
       setSelectedCountries(temp);
     }
+    setQuery("");
   }, [region]);
 
   const handleChange = (e) => {
@@ -52,8 +53,8 @@ export default function Home() {
       <Handler
         value={query}
         onChange={handleChange}
-        setRegion={setRegion}
         region={region}
+        setRegion={setRegion}
       />
       <Countries countries={selectedCountries} />
     </Layout>

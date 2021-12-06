@@ -5,8 +5,10 @@ import Div from "./style";
 const Handler = ({ value, onChange, region, setRegion }) => {
   return (
     <Div>
-      <Input value={value} onChange={onChange} />
-      <Region region={region} setRegion={setRegion} />
+      <div className="container">
+        <Input value={value} onChange={onChange} />
+        <Region region={region} setRegion={setRegion} />
+      </div>
     </Div>
   );
 };

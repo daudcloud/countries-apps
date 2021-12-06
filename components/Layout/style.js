@@ -14,6 +14,7 @@ const Div = styled.div`
     dark ? "hsl(209, 23%, 42%)" : "hsl(0, 0%, 60%)"};
   --clr-list-hover: ${({ dark }) =>
     dark ? "hsl(209, 23%, 32%)" : "hsl(0, 0%, 80%)"};
+  --padding-container: 1.7em;
   min-height: 100vh;
   background: var(--clr-background);
 `;
