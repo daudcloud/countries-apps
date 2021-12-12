@@ -10,6 +10,7 @@ const Div = styled.div`
   font-weight: 600;
   padding: 0 2em;
   width: 38%;
+  box-shadow: 0 0.025rem 0.5rem 0.3rem var(--clr-shadow);
   input {
     border: none;
     outline: none;

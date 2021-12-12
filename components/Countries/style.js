@@ -8,7 +8,7 @@ const Div = styled.div`
     max-width: var(--max-width);
     margin: auto;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 5rem;
   }
 `;
 

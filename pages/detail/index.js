@@ -1,7 +1,10 @@
 import Layout from "../../components/Layout";
+import { useRouter } from "next/router";
 
 const Detail = () => {
-  return <Layout title="detail">details</Layout>;
+  const router = useRouter();
+  const { c } = router.query;
+  return <Layout title="detail">{c}</Layout>;
 };
 
 export default Detail;

@@ -11,6 +11,7 @@ const Div = styled.div`
   padding: 1.3em 2em;
   position: relative;
   cursor: pointer;
+  box-shadow: 0 0.025rem 0.5rem 0.3rem var(--clr-shadow);
   span {
     margin-left: 1.5rem;
   }
@@ -26,6 +27,8 @@ const Div = styled.div`
     transition: 0.1s ease-in-out;
     transform: scaleY(0);
     transform-origin: top;
+    z-index: 2;
+    box-shadow: 0 0.025rem 0.5rem 0.3rem var(--clr-shadow);
 
     &.opened {
       transform: scaleY(1);

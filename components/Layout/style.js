@@ -8,7 +8,7 @@ const Div = styled.div`
   --clr-background: ${({ dark }) =>
     dark ? "hsl(207, 26%, 17%)" : "hsl(0, 0%, 98%)"};
   --clr-shadow: ${({ dark }) =>
-    dark ? "hsla(0,0,0%,0.7)" : "hsla(0,0,70%,0.7)"};
+    dark ? "hsla(0,0%,10%,0.2)" : "hsla(0,0%,50%,0.1)"};
   --max-width: 1280px;
   --clr-list-active: ${({ dark }) =>
     dark ? "hsl(209, 23%, 42%)" : "hsl(0, 0%, 60%)"};

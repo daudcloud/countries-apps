@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Div = styled.div`
-  margin-top: 3rem;
+  margin: 3rem 0;
   font-size: 0.9rem;
   padding: 0 var(--padding-container);
   .container {
