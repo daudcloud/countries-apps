@@ -21,6 +21,17 @@ const Div = styled.div`
     width: 90%;
     font-size: inherit;
   }
+
+  @media (max-width: 450px) {
+    & {
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    input {
+      padding: 1.1em 0;
+    }
+  }
 `;
 
 export default Div;

@@ -11,6 +11,18 @@ const Div = styled.div`
     max-width: var(--max-width);
     margin: auto;
   }
+
+  @media (max-width: 450px) {
+    & {
+      --padding-container: 1.2em;
+      margin: 1.4rem 0;
+    }
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.5rem;
+    }
+  }
 `;
 
 export default Div;

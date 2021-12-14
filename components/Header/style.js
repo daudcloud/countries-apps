@@ -26,6 +26,18 @@ const Div = styled.div`
       margin-left: 0.5rem;
     }
   }
+
+  @media (max-width: 450px) {
+    & {
+      padding: 0.3em 1.2em;
+    }
+    .title {
+      font-size: 0.9rem;
+    }
+    .toggle-dark {
+      font-size: 0.7rem;
+    }
+  }
 `;
 
 export default Div;

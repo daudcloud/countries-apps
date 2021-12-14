@@ -34,6 +34,11 @@ const Div = styled.div`
       transform: scaleY(1);
     }
   }
+  @media (max-width: 450px) {
+    & {
+      font-size: 0.7rem;
+    }
+  }
 `;
 
 export const Li = styled.li`
