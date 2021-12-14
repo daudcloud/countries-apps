@@ -1,5 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
 import Layout from "../components/Layout";
 import { useState, useEffect } from "react";
 import Handler from "../components/Handler";
