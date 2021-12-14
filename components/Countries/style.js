@@ -13,12 +13,16 @@ const Div = styled.div`
     @media (max-width: 1200px) {
       grid-template-columns: repeat(3, 1fr);
     }
-    @media (max-width: 930px) {
+    @media (max-width: 900px) {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 600px) {
-      grid-template-columns: repeat(1, 1fr);
+    @media (max-width: 450px) {
+      grid-template-columns: 1fr;
+      grid-gap: 3rem;
     }
+  }
+  @media (max-width: 450px) {
+    --padding-container: 3.5em;
   }
 `;
 
