@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const StyledRegion = styled.div`
   background: var(--clr-background-element);
   border-radius: 0.3rem;
   color: var(--clr-text);
@@ -53,4 +53,4 @@ export const Li = styled.li`
   }
 `;
 
-export default Div;
+export default StyledRegion;

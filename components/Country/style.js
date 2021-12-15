@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const StyledCountry = styled.div`
   background: var(--clr-background-element);
   color: var(--clr-text);
   border-radius: 0.3rem;
@@ -36,4 +36,4 @@ const Div = styled.div`
   }
 `;
 
-export default Div;
+export default StyledCountry;

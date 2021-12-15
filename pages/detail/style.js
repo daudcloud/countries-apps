@@ -52,7 +52,7 @@ const Div = styled.div`
     font-weight: 700;
   }
 
-  p:last-child {
+  .border-wrapper > p {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -62,7 +62,6 @@ const Div = styled.div`
   }
 
   .borders {
-    margin-top: 1rem;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;

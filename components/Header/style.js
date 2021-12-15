@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const StyledHeader = styled.div`
   transition: 0.1s linear;
   background: var(--clr-background-element);
   color: var(--clr-text);
@@ -40,4 +40,4 @@ const Div = styled.div`
   }
 `;
 
-export default Div;
+export default StyledHeader;

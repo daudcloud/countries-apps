@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const StyledCountries = styled.div`
   padding: 0 var(--padding-container);
+  color: var(--clr-text);
   .container {
     display: grid;
     width: 100%;
@@ -26,4 +27,4 @@ const Div = styled.div`
   }
 `;
 
-export default Div;
+export default StyledCountries;

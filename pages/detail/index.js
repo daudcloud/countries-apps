@@ -92,7 +92,7 @@ const Detail = () => {
                   </p>
                 </div>
               </div>
-              <div>
+              <div className="border-wrapper">
                 <p>
                   <span>Border Countries: </span>
                   <span className="borders">
@@ -101,7 +101,10 @@ const Detail = () => {
                         (country) => country.alpha3Code === border
                       );
                       return (
-                        <Link href={`/detail?name=${temp.name}`}>
+                        <Link
+                          href={`/detail?name=${temp.name}`}
+                          key={temp.name}
+                        >
                           <a className="border">{temp.name}</a>
                         </Link>
                       );

@@ -1,4 +1,4 @@
-import Div from "./style";
+import StyledCountry from "./style";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,9 +10,14 @@ const Country = ({ country }) => {
     return x;
   }
   return (
-    <Div>
+    <StyledCountry>
       <div className="flag">
-        <Image src={country.flags.svg} layout="fill" objectFit="cover" />
+        <Image
+          priority
+          src={country.flags.svg}
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
       <div className="info">
         <Link href={`/detail?name=${country.name}`} className="name">
@@ -30,7 +35,7 @@ const Country = ({ country }) => {
           </p>
         </div>
       </div>
-    </Div>
+    </StyledCountry>
   );
 };
 

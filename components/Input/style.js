@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const StyledInput = styled.div`
   background: var(--clr-background-element);
   border-radius: 0.3rem;
   color: var(--clr-text);
@@ -34,4 +34,4 @@ const Div = styled.div`
   }
 `;
 
-export default Div;
+export default StyledInput;

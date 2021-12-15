@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Div = styled.div`
+  font-family: "Nunito Sans", sans-serif;
   --clr-background-element: ${({ dark }) =>
     dark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"};
   --clr-text: ${({ dark }) =>
@@ -17,6 +18,11 @@ const Div = styled.div`
   --padding-container: 1.7em;
   min-height: 100vh;
   background: var(--clr-background);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default Div;

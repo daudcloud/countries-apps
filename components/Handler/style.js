@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const StyledHandler = styled.div`
   margin: 3rem 0;
   font-size: 0.9rem;
   padding: 0 var(--padding-container);
@@ -25,4 +25,4 @@ const Div = styled.div`
   }
 `;
 
-export default Div;
+export default StyledHandler;
