@@ -31,8 +31,6 @@ const Detail = () => {
     setCountry(temp);
   }, [countries, name]);
 
-  console.log(country);
-
   return (
     <Layout title={name}>
       <Div>
