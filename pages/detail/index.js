@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import Div from "./style";
 
 const Detail = () => {
   const router = useRouter();
@@ -28,84 +29,90 @@ const Detail = () => {
       (country) => country.name.toLowerCase() === name.toLowerCase()
     );
     setCountry(temp);
-  }, [countries]);
+  }, [countries, name]);
 
   console.log(country);
 
   return (
     <Layout title={name}>
-      <div>
+      <Div>
         <Link href="/">
-          <a>
+          <a className="back">
             <i className="fas fa-arrow-left"></i> Back
           </a>
         </Link>
-      </div>
-      {country === undefined ? (
-        <div>Loading...</div>
-      ) : (
-        <div>
-          <div className="flag">
-            {/* <Image layout="fill" objectFit="cover" src={country.flags.svg} /> */}
-          </div>
-          <div className="info">
-            <div className="country-name">{country.name}</div>
-            <div className="sub-infos">
-              <div className="sub-info">
-                <p>
-                  <span>Native Name: </span>
-                  {country.nativeName}
-                </p>
-                <p>
-                  <span>Population: </span>
-                  {numberWithCommas(country.population)}
-                </p>
-                <p>
-                  <span>Region: </span>
-                  {country.region}
-                </p>
-                <p>
-                  <span>Sub Region: </span>
-                  {country.subregion}
-                </p>
-                <p>
-                  <span>Capital: </span>
-                  {country.capital}
-                </p>
+        {country === undefined ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="details">
+            <div className="flag">
+              <Image layout="fill" objectFit="cover" src={country.flags.svg} />
+            </div>
+            <div className="info">
+              <div className="country-name">{country.name}</div>
+              <div className="sub-infos">
+                <div className="sub-info">
+                  <p>
+                    <span>Native Name: </span>
+                    {country.nativeName}
+                  </p>
+                  <p>
+                    <span>Population: </span>
+                    {numberWithCommas(country.population)}
+                  </p>
+                  <p>
+                    <span>Region: </span>
+                    {country.region}
+                  </p>
+                  <p>
+                    <span>Sub Region: </span>
+                    {country.subregion}
+                  </p>
+                  <p>
+                    <span>Capital: </span>
+                    {country.capital}
+                  </p>
+                </div>
+                <div className="sub-info">
+                  <p>
+                    <span>Top Level Domain: </span>
+                    {country.topLevelDomain}
+                  </p>
+                  <p>
+                    <span>Currencies: </span>
+                    {country.currencies[0].name}
+                  </p>
+                  <p>
+                    <span>Languages: </span>
+                    {country.languages.map((language, index) => {
+                      if (index == country.languages.length - 1)
+                        return language.name;
+                      return language.name + ", ";
+                    })}
+                  </p>
+                </div>
               </div>
-              <div className="sub-info">
+              <div>
                 <p>
-                  <span>Top Level Domain: </span>
-                  {country.topLevelDomain}
-                </p>
-                <p>
-                  <span>Currencies: </span>
-                  {country.currencies[0].name}
-                </p>
-                <p>
-                  <span>Languages: </span>
-                  {country.languages.map((language, index) => {
-                    if (index == country.languages.length - 1)
-                      return language.name;
-                    return language.name + ", ";
-                  })}
+                  <span>Border Countries: </span>
+                  <span className="borders">
+                    {country.borders.map((border) => {
+                      const temp = countries.find(
+                        (country) => country.alpha3Code === border
+                      );
+                      return (
+                        <Link href={`/detail?name=${temp.name}`}>
+                          <a className="border">{temp.name}</a>
+                        </Link>
+                      );
+                    })}
+                  </span>
                 </p>
               </div>
             </div>
-            <div className="borders">
-              <p>
-                <span>Border Countries: </span>
-                {country.borders.map((border) => {
-                  const temp = countries.find(
-                    (country) => country.alpha3Code === border
-                  );
-                  return <span className="border">{temp.name}</span>;
-                })}
-              </p>
-            </div>
           </div>
-        </div>
-      )}
+        )}
+      </Div>
     </Layout>
   );
 };
