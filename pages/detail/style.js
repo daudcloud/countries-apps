@@ -20,9 +20,6 @@ const Div = styled.div`
     gap: 10rem;
     align-items: center;
     padding-bottom: 20rem;
-    & > * {
-      flex-basis: 50%;
-    }
     span:not(.border) {
       font-weight: 600;
     }
@@ -30,6 +27,7 @@ const Div = styled.div`
   .flag {
     position: relative;
     height: 25rem;
+    width: 100%;
   }
 
   .info {
@@ -73,6 +71,49 @@ const Div = styled.div`
     background: var(--clr-background-element);
     border-radius: 0.3rem;
     box-shadow: 0 0.025rem 0.5rem 0.3rem var(--clr-shadow);
+  }
+
+  @media (max-width: 1050px) {
+    .details {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3rem;
+      padding-bottom: 5rem;
+    }
+
+    .flag {
+      height: 50vmax;
+    }
+  }
+
+  @media (max-width: 530px) {
+    .details {
+      margin-top: 2rem;
+    }
+    .back {
+      font-size: 0.9rem;
+      margin: 2.5rem 0;
+    }
+    .country-name {
+      font-size: 1.5rem;
+    }
+    .sub-infos {
+      font-size: 0.8rem;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .border-wrapper > p {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 1rem;
+    }
+
+    .border {
+      font-size: 0.7rem;
+    }
+    .flag {
+      height: 60vmin;
+    }
   }
 `;
 

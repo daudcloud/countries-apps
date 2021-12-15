@@ -11,6 +11,7 @@ const StyledInput = styled.div`
   padding: 0 2em;
   width: 38%;
   box-shadow: 0 0.025rem 0.5rem 0.3rem var(--clr-shadow);
+  align-self: stretch;
   input {
     border: none;
     outline: none;
@@ -22,9 +23,9 @@ const StyledInput = styled.div`
     font-size: inherit;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 530px) {
     & {
-      width: 100%;
+      width: auto;
       font-size: 0.9rem;
     }
 

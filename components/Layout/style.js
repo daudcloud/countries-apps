@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const StyledLayout = styled.div`
   font-family: "Nunito Sans", sans-serif;
   --clr-background-element: ${({ dark }) =>
     dark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"};
@@ -25,4 +25,4 @@ const Div = styled.div`
   }
 `;
 
-export default Div;
+export default StyledLayout;

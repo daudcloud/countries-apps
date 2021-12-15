@@ -46,7 +46,12 @@ const Detail = () => {
         ) : (
           <div className="details">
             <div className="flag">
-              <Image layout="fill" objectFit="cover" src={country.flags.svg} />
+              <Image
+                priority
+                layout="fill"
+                objectFit="cover"
+                src={country.flags.svg}
+              />
             </div>
             <div className="info">
               <div className="country-name">{country.name}</div>
@@ -96,19 +101,23 @@ const Detail = () => {
                 <p>
                   <span>Border Countries: </span>
                   <span className="borders">
-                    {country.borders.map((border) => {
-                      const temp = countries.find(
-                        (country) => country.alpha3Code === border
-                      );
-                      return (
-                        <Link
-                          href={`/detail?name=${temp.name}`}
-                          key={temp.name}
-                        >
-                          <a className="border">{temp.name}</a>
-                        </Link>
-                      );
-                    })}
+                    {!country.borders ? (
+                      <span></span>
+                    ) : (
+                      country.borders.map((border) => {
+                        const temp = countries.find(
+                          (country) => country.alpha3Code === border
+                        );
+                        return (
+                          <Link
+                            href={`/detail?name=${temp.name}`}
+                            key={temp.name}
+                          >
+                            <a className="border">{temp.name}</a>
+                          </Link>
+                        );
+                      })
+                    )}
                   </span>
                 </p>
               </div>

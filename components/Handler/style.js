@@ -12,7 +12,7 @@ const StyledHandler = styled.div`
     margin: auto;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 530px) {
     & {
       --padding-container: 1.2em;
       margin: 1.4rem 0;

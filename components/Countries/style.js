@@ -17,12 +17,12 @@ const StyledCountries = styled.div`
     @media (max-width: 900px) {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 450px) {
+    @media (max-width: 530px) {
       grid-template-columns: 1fr;
       grid-gap: 3rem;
     }
   }
-  @media (max-width: 450px) {
+  @media (max-width: 530px) {
     --padding-container: 3.5em;
   }
 `;
