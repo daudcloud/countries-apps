@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const StyledCountries = styled.div`
   padding: 0 var(--padding-container);
+  padding-bottom: 5rem;
   color: var(--clr-text);
   .container {
     display: grid;

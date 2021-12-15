@@ -19,6 +19,8 @@ export default function Home() {
     setSelectedCountries(countries);
   }, [countries]);
 
+  console.log(countries);
+
   useEffect(() => {
     const regx = new RegExp(`\^${query}`, "gi");
     const temp =
@@ -54,7 +56,7 @@ export default function Home() {
         region={region}
         setRegion={setRegion}
       />
-      <Countries countries={selectedCountries} />
+      <Countries countries={selectedCountries} query={query} />
     </Layout>
   );
 }

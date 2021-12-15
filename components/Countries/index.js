@@ -1,10 +1,10 @@
 import Country from "../Country";
-import Div from "./style";
+import StyledCountries from "./style";
 
-const Countries = ({ countries }) => {
+const Countries = ({ countries, query }) => {
   return (
-    <Div>
-      {countries.length === 0 ? (
+    <StyledCountries>
+      {countries.length === 0 && query === "" ? (
         <div className="container">Loading...</div>
       ) : (
         <div className="container">
@@ -13,7 +13,7 @@ const Countries = ({ countries }) => {
           ))}
         </div>
       )}
-    </Div>
+    </StyledCountries>
   );
 };
 
