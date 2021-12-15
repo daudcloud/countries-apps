@@ -9,10 +9,10 @@ export default function Home() {
   const [regCountries, setRegCountries] = useState([]);
   const [query, setQuery] = useState("");
   const [region, setRegion] = useState("");
-  useEffect(() => {
-    fetch("https://restcountries.com/v2/all")
-      .then((res) => res.json())
-      .then((data) => setCountries(data));
+  useEffect(async () => {
+    const res = await fetch("https://restcountries.com/v2/all");
+    const data = await res.json();
+    setCountries(data);
   }, []);
 
   useEffect(() => {
