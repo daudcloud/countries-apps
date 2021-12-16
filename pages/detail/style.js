@@ -4,6 +4,12 @@ const Div = styled.div`
   color: var(--clr-text);
   padding: 0 var(--padding-container);
 
+  .container {
+    margin: auto;
+    width: 100%;
+    max-width: var(--max-width);
+  }
+
   .back {
     background: var(--clr-background-element);
     display: inline-block;
@@ -22,6 +28,9 @@ const Div = styled.div`
     padding-bottom: 20rem;
     span:not(.border) {
       font-weight: 600;
+    }
+    & > * {
+      width: 100%;
     }
   }
   .flag {
@@ -87,6 +96,7 @@ const Div = styled.div`
   }
 
   @media (max-width: 530px) {
+    --padding-container: 1.2em;
     .details {
       margin-top: 2rem;
     }

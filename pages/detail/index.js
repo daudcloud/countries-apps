@@ -34,94 +34,96 @@ const Detail = () => {
   return (
     <Layout title={name}>
       <Div>
-        <Link href="/">
-          <a className="back">
-            <i className="fas fa-arrow-left"></i> Back
-          </a>
-        </Link>
-        {country === undefined ? (
-          <div>Loading...</div>
-        ) : (
-          <div className="details">
-            <div className="flag">
-              <Image
-                priority
-                layout="fill"
-                objectFit="cover"
-                src={country.flags.svg}
-              />
-            </div>
-            <div className="info">
-              <div className="country-name">{country.name}</div>
-              <div className="sub-infos">
-                <div className="sub-info">
-                  <p>
-                    <span>Native Name: </span>
-                    {country.nativeName}
-                  </p>
-                  <p>
-                    <span>Population: </span>
-                    {numberWithCommas(country.population)}
-                  </p>
-                  <p>
-                    <span>Region: </span>
-                    {country.region}
-                  </p>
-                  <p>
-                    <span>Sub Region: </span>
-                    {country.subregion}
-                  </p>
-                  <p>
-                    <span>Capital: </span>
-                    {country.capital}
-                  </p>
+        <div className="container">
+          <Link href="/">
+            <a className="back">
+              <i className="fas fa-arrow-left"></i> Back
+            </a>
+          </Link>
+          {country === undefined ? (
+            <div>Loading...</div>
+          ) : (
+            <div className="details">
+              <div className="flag">
+                <Image
+                  priority
+                  layout="fill"
+                  objectFit="cover"
+                  src={country.flags.svg}
+                />
+              </div>
+              <div className="info">
+                <div className="country-name">{country.name}</div>
+                <div className="sub-infos">
+                  <div className="sub-info">
+                    <p>
+                      <span>Native Name: </span>
+                      {country.nativeName}
+                    </p>
+                    <p>
+                      <span>Population: </span>
+                      {numberWithCommas(country.population)}
+                    </p>
+                    <p>
+                      <span>Region: </span>
+                      {country.region}
+                    </p>
+                    <p>
+                      <span>Sub Region: </span>
+                      {country.subregion}
+                    </p>
+                    <p>
+                      <span>Capital: </span>
+                      {country.capital}
+                    </p>
+                  </div>
+                  <div className="sub-info">
+                    <p>
+                      <span>Top Level Domain: </span>
+                      {country.topLevelDomain}
+                    </p>
+                    <p>
+                      <span>Currencies: </span>
+                      {country.currencies[0].name}
+                    </p>
+                    <p>
+                      <span>Languages: </span>
+                      {country.languages.map((language, index) => {
+                        if (index == country.languages.length - 1)
+                          return language.name;
+                        return language.name + ", ";
+                      })}
+                    </p>
+                  </div>
                 </div>
-                <div className="sub-info">
+                <div className="border-wrapper">
                   <p>
-                    <span>Top Level Domain: </span>
-                    {country.topLevelDomain}
-                  </p>
-                  <p>
-                    <span>Currencies: </span>
-                    {country.currencies[0].name}
-                  </p>
-                  <p>
-                    <span>Languages: </span>
-                    {country.languages.map((language, index) => {
-                      if (index == country.languages.length - 1)
-                        return language.name;
-                      return language.name + ", ";
-                    })}
+                    <span>Border Countries: </span>
+                    <span className="borders">
+                      {!country.borders ? (
+                        <span></span>
+                      ) : (
+                        country.borders.map((border) => {
+                          const temp = countries.find(
+                            (country) => country.alpha3Code === border
+                          );
+                          return (
+                            <Link
+                              href={`/detail?name=${temp.name}`}
+                              key={temp.name}
+                            >
+                              <a className="border">{temp.name}</a>
+                            </Link>
+                          );
+                        })
+                      )}
+                    </span>
                   </p>
                 </div>
               </div>
-              <div className="border-wrapper">
-                <p>
-                  <span>Border Countries: </span>
-                  <span className="borders">
-                    {!country.borders ? (
-                      <span></span>
-                    ) : (
-                      country.borders.map((border) => {
-                        const temp = countries.find(
-                          (country) => country.alpha3Code === border
-                        );
-                        return (
-                          <Link
-                            href={`/detail?name=${temp.name}`}
-                            key={temp.name}
-                          >
-                            <a className="border">{temp.name}</a>
-                          </Link>
-                        );
-                      })
-                    )}
-                  </span>
-                </p>
-              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </Div>
     </Layout>
   );
